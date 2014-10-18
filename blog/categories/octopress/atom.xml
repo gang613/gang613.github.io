@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Gang613's Blog]]></title>
-  <link href="http://gang613.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: octopress | Gang613's Blog]]></title>
+  <link href="http://gang613.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://gang613.github.io/"/>
   <updated>2014-10-18T16:16:53+08:00</updated>
   <id>http://gang613.github.io/</id>
