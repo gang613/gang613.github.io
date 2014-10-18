@@ -1,74 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE HTML>
-<html lang="zh-cn">
-<head>
-  <meta charset="UTF-8">
-  <title>Gang613&#8217;s Blog</title>
-
-  <meta name="author" content="gang613">
-  
-  <meta name="description" content="如何将GitHub Pages设置为个人Blog 本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。 注册GitHub账户， &hellip;">
-  
-  
-
-  <link rel="canonical" href="http://gang613.github.io">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Gang613's Blog" type="application/atom+xml">
-</head>
-  
-<body class="default">
-  <div id="wrapper">
-    <div id="header">
-  <h1><a href="/">Gang613&#8217;s Blog</a></h1>
-  
-    <p>A blogging framework for hackers.</p>
-  
-</div>
-<ul id="social-links">
-  
-    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
-  
-  
-  
-</ul>
-<div class="clear"></div>
-<ul id="nav">
-  
-    <li> <a href="/" class="current">blog</a> </li>
-  
+  <title><![CDATA[Gang613's Blog]]></title>
+  <link href="http://gang613.github.io/feed" rel="self"/>
+  <link href="http://gang613.github.io/"/>
+  <updated>2014-10-18T15:22:58+08:00</updated>
+  <id>http://gang613.github.io/</id>
+  <author>
+    <name><![CDATA[gang613]]></name>
+    <email><![CDATA[gang613@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-    <li><a href="/blog/archives">archives</a></li>
-  
-</ul>
-
-    <div id="main"> 
-
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2014/10/18/my-first-blog/">如何将GitHub Pages设置为个人Blog</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-18T00:31:30+08:00" pubdate data-updated="true"></time>
-</div>
-
-
-  <div class="post-content"><p>本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。</p>
+  <entry>
+    <title type="html"><![CDATA[ 如何将GitHub Pages设置为个人Blog ]]></title>
+    <link href="http://gang613.github.io/blog/2014/10/18/my-first-blog/"/>
+    <updated>2014-10-18T00:31:30+08:00</updated>
+    <id>http://gang613.github.io/blog/2014/10/18/my-first-blog</id>
+    <content type="html"><![CDATA[<p>本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。</p>
 
 <h2>注册GitHub账户，设置Repository</h2>
 
@@ -268,61 +218,7 @@ $ bundle install
 [4]. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-with-rbenv--2">How To Install Ruby On Rails on Ubuntu 12.04 LTS with rbenv</a><br/>
 [5]. <a href="http://42.96.192.22/?cat=478">更换Gem源</a><br/>
 [6]. <a href="http://sonnewilling.com/blog/2013/11/14/shi-yong-octopressda-jian-ge-ren-bo-ke/">使用Octopress搭建个人博客</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
- </div>
-
-
-<div id="pagination">
-  
-  
-</div>
- </div>
-    <div id="footer">
-  <div class="panels">
-    <div class="license">
-      <h2>License</h2>
-      <p>如非特别声明，本 Blog 的文章由 gang613 创作，采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">知识共享署名-非商业性使用-相同方式共享 3.0 Unported 许可协议</a>进行许可。</p>
-    </div>
-
-    <div class="posts">
-      <h2>Recent Posts</h2>
-      <ul>
-        
-          <li>
-            <a href="/blog/2014/10/18/my-first-blog/"> 如何将GitHub Pages设置为个人Blog </a>
-          </li>
-        
-      </ul>
-    </div>
-
-    <div class="douban">
-      <h2>Reading</h2>
-      
-        <p>Please set your Douban ID in _config.yml</p>
-      
-    </div>
-  </div>
-
-  <p class="powered">
-    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
-  </p>
-</div>
-
-  </div> <!-- #wrapper end -->
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-</body>
-</html>
+</feed>
