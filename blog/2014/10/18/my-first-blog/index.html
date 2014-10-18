@@ -1,53 +1,80 @@
 
-<!DOCTYPE HTML>
-<html lang="zh-cn">
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title> 如何将GitHub Pages设置为个人Blog  - Gang613&#8217;s Blog</title>
-
   <meta name="author" content="gang613">
+
   
-  <meta name="description" content="如何将GitHub Pages设置为个人Blog 本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。 注册GitHub账户， &hellip;">
-  
+  <meta name="description" content="本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。 注册GitHub账户，设置Repository 访问https://github. &hellip;">
   
 
-  <link rel="canonical" href="http://gang613.github.io/blog/2014/10/18/my-first-blog">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://gang613.github.io/blog/2014/10/18/my-first-blog/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Gang613's Blog" type="application/atom+xml">
+  <!-- font-family: 'Knewave', cursive; -->
+<link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
+<!-- font-family: 'Cantata One', serif; -->
+<link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+
+  
+
 </head>
-  
-<body class="default">
-  <div id="wrapper">
-    <div id="header">
-  <h1><a href="/">Gang613&#8217;s Blog</a></h1>
-  
-    <p>A blogging framework for hackers.</p>
-  
-</div>
-<ul id="social-links">
-  
-    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
-  
-  
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1>
+      <a href="/">Gang613&#8217;s Blog</a>
+      
+        <span>A blogging framework for hackers.</span>
+      
+  </h1>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
-<div class="clear"></div>
-<ul id="nav">
   
-    <li> <a href="/">blog</a> </li>
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:gang613.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
   
-
-  
-    <li><a href="/blog/archives">archives</a></li>
-  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
-    <div id="main"> <div class="post-header">
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
   
-    <h1 class="post-title">如何将GitHub Pages设置为个人Blog</h1>
-  
-  
+  <header>
+    
+      <h1 class="entry-title">如何将GitHub Pages设置为个人Blog</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -60,10 +87,14 @@
 
 
 <time datetime="2014-10-18T00:31:30+08:00" pubdate data-updated="true"></time>
-</div>
+        
+        
+      </p>
+    
+  </header>
 
 
-<div class="post-content"><p>本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。</p>
+<div class="entry-content"><p>本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。</p>
 
 <h2>注册GitHub账户，设置Repository</h2>
 
@@ -155,14 +186,14 @@ make
 make install
 </code></pre>
 
-<p>保存推出后，执行</p>
+<p>保存退出后，执行脚本</p>
 
 <pre><code>$ sudo ./install-ruby.sh
 </code></pre>
 
 <h2>安装rbenv</h2>
 
-<p>rbenv 是管理ruby版本依赖的工具，类似于RVM，安装Octopress时需要使用。先运行以下脚本：</p>
+<p>rbenv 是ruby版本管理工具，类似于RVM，安装Octopress时需要使用。先运行以下脚本：</p>
 
 <pre><code>$ sudo curl  https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
 </code></pre>
@@ -194,7 +225,7 @@ fi
 <pre><code>$ gem sources -l
 </code></pre>
 
-<p>移除<a href="https://rubygems.org%E6%BA%90">https://rubygems.org%E6%BA%90</a></p>
+<p>移除<a href="https://rubygems.org">https://rubygems.org</a> 源</p>
 
 <pre><code>$ gem sources --remove https://rubygems.org/
 </code></pre>
@@ -235,25 +266,47 @@ $ bundle install
 
 <h2>Octopress配置</h2>
 
-<p>Octopress配置主要修改<em>config.yml文件，关于</em>config.yml文件中的更多内容，请看这里的内容：<a href="http://octopress.org/docs/configuring/">Configuring Octopress</a></p>
-
-<p>创建新blog</p>
+<p>Octopress配置主要修改<em>config.yml文件，关于</em>config.yml文件中的更多内容，请看这里的内容：<a href="http://octopress.org/docs/configuring/">Configuring Octopress</a>  <br/>
+创建新blog</p>
 
 <pre><code>$ rake new_post["title"]
 </code></pre>
 
-<p>新文件创建于 _posts目录下<br/>
-生成</p>
+<p>新文件创建于 source/_posts目录下。</p>
+
+<p>生成</p>
 
 <pre><code>$ rake generate
 </code></pre>
 
-<p>预览</p>
+<p>预览，可以访问 <a href="http://localhost:4000">http://localhost:4000</a> 进行预览</p>
 
 <pre><code>$ rake preview   
 </code></pre>
 
-<p>配置octopress与github的连接：</p>
+<p>配置octopress与github的连接</p>
+
+<pre><code>$ rake setup_github_pages
+ Enter the read/write url for your repository
+(For example, 'git@github.com:your_username/your_username.github.io.git)
+       or 'https://github.com/your_username/your_username.github.io')
+#本文输入如下：
+https://github.com/gang613/gang613.github.io
+</code></pre>
+
+<p>发布到github</p>
+
+<pre><code>$ rake deploy
+</code></pre>
+
+<p>完成以上步骤后，静态blog页面会被push到对应repository的master分支下。博客站点已可访问。</p>
+
+<p>另可把博客的源码放到source的分支上，以便在不同的电脑上编辑博客。</p>
+
+<pre><code>$ git add .
+$ git commit -am "Some comment here." 
+$ git push origin source
+</code></pre>
 
 <h2>Reference</h2>
 
@@ -262,16 +315,41 @@ $ bundle install
 [3]. <a href="https://gist.github.com/bartimaeus/2845824">Install Ruby 1.9.3-p286 on Ubuntu 12.04 LTS</a><br/>
 [4]. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-with-rbenv--2">How To Install Ruby On Rails on Ubuntu 12.04 LTS with rbenv</a><br/>
 [5]. <a href="http://42.96.192.22/?cat=478">更换Gem源</a><br/>
-[6]. <a href="http://sonnewilling.com/blog/2013/11/14/shi-yong-octopressda-jian-ge-ren-bo-ke/">使用Octopress搭建个人博客</a></p>
+[6]. <a href="http://sonnewilling.com/blog/2013/11/14/shi-yong-octopressda-jian-ge-ren-bo-ke/">使用Octopress搭建个人博客</a><br/>
+[7]. <a href="http://www.yangzhiping.com/tech/octopress.html">Ruby开源项目介绍(1)：octopress——像黑客一样写博客</a></p>
 </div>
 
 
+  <footer>
+    <p class="meta">
+      
+  
 
-<div class="post-single">
-  <div class="post-meta">
-    
+<span class="byline author vcard">Posted by <span class="fn">gang613</span></span>
+
+      
 
 
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-18T00:31:30+08:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/github-git-octopress/'>github,git,octopress</a>
+  
+</span>
+
+
+    </p>
     
       <div class="sharing">
   
@@ -280,55 +358,55 @@ $ bundle install
 </div>
 
     
-  </div>
-  <div class="clear"></div>
-
-  
-</div>
- </div>
-    <div id="footer">
-  <div class="panels">
-    <div class="license">
-      <h2>License</h2>
-      <p>如非特别声明，本 Blog 的文章由 gang613 创作，采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">知识共享署名-非商业性使用-相同方式共享 3.0 Unported 许可协议</a>进行许可。</p>
-    </div>
-
-    <div class="posts">
-      <h2>Recent Posts</h2>
-      <ul>
-        
-          <li>
-            <a href="/blog/2014/10/18/my-first-blog/"> 如何将GitHub Pages设置为个人Blog </a>
-          </li>
-        
-      </ul>
-    </div>
-
-    <div class="douban">
-      <h2>Reading</h2>
+    <p class="meta">
       
-        <p>Please set your Douban ID in _config.yml</p>
       
-    </div>
-  </div>
+    </p>
+  </footer>
+</article>
 
-  <p class="powered">
-    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
-  </p>
 </div>
 
-  </div> <!-- #wrapper end -->
+<aside class="sidebar">
+  
+    <section class="first odd">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/18/my-first-blog/"> 如何将GitHub Pages设置为个人Blog </a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
 
   
+</aside>
 
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - gang613 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/gluttony/object-octopress-theme">Object</a></span>
+</p>
+
+</footer>
   
 
 
-  
 
-  
 
-  
+
+
+
+
+
+
 
 </body>
 </html>

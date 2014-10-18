@@ -4,7 +4,7 @@
   <title><![CDATA[Gang613's Blog]]></title>
   <link href="http://gang613.github.io/atom.xml" rel="self"/>
   <link href="http://gang613.github.io/"/>
-  <updated>2014-10-18T15:22:58+08:00</updated>
+  <updated>2014-10-18T15:54:43+08:00</updated>
   <id>http://gang613.github.io/</id>
   <author>
     <name><![CDATA[gang613]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[如何将GitHub Pages设置为个人Blog]]></title>
+    <title type="html"><![CDATA[ 如何将GitHub Pages设置为个人Blog ]]></title>
     <link href="http://gang613.github.io/blog/2014/10/18/my-first-blog/"/>
     <updated>2014-10-18T00:31:30+08:00</updated>
     <id>http://gang613.github.io/blog/2014/10/18/my-first-blog</id>
@@ -110,14 +110,14 @@ make
 make install
 </code></pre>
 
-<p>保存推出后，执行</p>
+<p>保存退出后，执行脚本</p>
 
 <pre><code>$ sudo ./install-ruby.sh
 </code></pre>
 
 <h2>安装rbenv</h2>
 
-<p>rbenv 是管理ruby版本依赖的工具，类似于RVM，安装Octopress时需要使用。先运行以下脚本：</p>
+<p>rbenv 是ruby版本管理工具，类似于RVM，安装Octopress时需要使用。先运行以下脚本：</p>
 
 <pre><code>$ sudo curl  https://raw.githubusercontent.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
 </code></pre>
@@ -149,7 +149,7 @@ fi
 <pre><code>$ gem sources -l
 </code></pre>
 
-<p>移除<a href="https://rubygems.org%E6%BA%90">https://rubygems.org%E6%BA%90</a></p>
+<p>移除<a href="https://rubygems.org">https://rubygems.org</a> 源</p>
 
 <pre><code>$ gem sources --remove https://rubygems.org/
 </code></pre>
@@ -190,25 +190,47 @@ $ bundle install
 
 <h2>Octopress配置</h2>
 
-<p>Octopress配置主要修改<em>config.yml文件，关于</em>config.yml文件中的更多内容，请看这里的内容：<a href="http://octopress.org/docs/configuring/">Configuring Octopress</a></p>
-
-<p>创建新blog</p>
+<p>Octopress配置主要修改<em>config.yml文件，关于</em>config.yml文件中的更多内容，请看这里的内容：<a href="http://octopress.org/docs/configuring/">Configuring Octopress</a>  <br/>
+创建新blog</p>
 
 <pre><code>$ rake new_post["title"]
 </code></pre>
 
-<p>新文件创建于 _posts目录下<br/>
-生成</p>
+<p>新文件创建于 source/_posts目录下。</p>
+
+<p>生成</p>
 
 <pre><code>$ rake generate
 </code></pre>
 
-<p>预览</p>
+<p>预览，可以访问 <a href="http://localhost:4000">http://localhost:4000</a> 进行预览</p>
 
 <pre><code>$ rake preview   
 </code></pre>
 
-<p>配置octopress与github的连接：</p>
+<p>配置octopress与github的连接</p>
+
+<pre><code>$ rake setup_github_pages
+ Enter the read/write url for your repository
+(For example, 'git@github.com:your_username/your_username.github.io.git)
+       or 'https://github.com/your_username/your_username.github.io')
+#本文输入如下：
+https://github.com/gang613/gang613.github.io
+</code></pre>
+
+<p>发布到github</p>
+
+<pre><code>$ rake deploy
+</code></pre>
+
+<p>完成以上步骤后，静态blog页面会被push到对应repository的master分支下。博客站点已可访问。</p>
+
+<p>另可把博客的源码放到source的分支上，以便在不同的电脑上编辑博客。</p>
+
+<pre><code>$ git add .
+$ git commit -am "Some comment here." 
+$ git push origin source
+</code></pre>
 
 <h2>Reference</h2>
 
@@ -217,7 +239,8 @@ $ bundle install
 [3]. <a href="https://gist.github.com/bartimaeus/2845824">Install Ruby 1.9.3-p286 on Ubuntu 12.04 LTS</a><br/>
 [4]. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-12-04-lts-with-rbenv--2">How To Install Ruby On Rails on Ubuntu 12.04 LTS with rbenv</a><br/>
 [5]. <a href="http://42.96.192.22/?cat=478">更换Gem源</a><br/>
-[6]. <a href="http://sonnewilling.com/blog/2013/11/14/shi-yong-octopressda-jian-ge-ren-bo-ke/">使用Octopress搭建个人博客</a></p>
+[6]. <a href="http://sonnewilling.com/blog/2013/11/14/shi-yong-octopressda-jian-ge-ren-bo-ke/">使用Octopress搭建个人博客</a><br/>
+[7]. <a href="http://www.yangzhiping.com/tech/octopress.html">Ruby开源项目介绍(1)：octopress——像黑客一样写博客</a></p>
 ]]></content>
   </entry>
   
