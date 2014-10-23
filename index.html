@@ -7,7 +7,7 @@
 	<meta name="author" content="gang613">
 
 	
-	<meta name="description" content="本文介绍如何采用git+github+Octopress搭建blog，Github Pages采用 User &amp; Organization Pages 类型，本地环境为Ubuntu 14.04 LTS 。 注册GitHub账户，设置Repository 访问https://github. &hellip;">
+	<meta name="description" content="1. 简介 通常进行Android应用开发需要通过AVD（Android Virtual Device）进行调试，由于AVD是模拟Android设备的运行环境，在启动加载过程中运行速度非常慢，本文介绍另一种方式，通过ADB（Android Debug Bridge）连接Android X86 &hellip;">
 	
 
 	<link href="/atom.xml" rel="alternate" title="Gang613's Blog" type="application/atom+xml">
@@ -30,6 +30,150 @@
 </nav>
 </header>
 	<div id="content" class="inner">
+
+
+	<article class="post"><header>
+  
+  <h1 class="title"><a href="/blog/2014/10/23/adt-connect-to-android-x86/">在Android开发中通过adb连接Android X86进行调试</a></h1>
+  
+  
+
+
+
+
+
+
+
+
+	
+		<time datetime="2014-10-23T12:01:31+08:00">
+			<span class="day">23</span><span class="month">Oct</span>
+		</time>
+	
+
+
+</header>
+<div class="entry-content">
+  
+    <h2>1. 简介</h2>
+
+<p>通常进行Android应用开发需要通过AVD（Android Virtual Device）进行调试，由于AVD是模拟Android设备的运行环境，在启动加载过程中运行速度非常慢，本文介绍另一种方式，通过ADB（Android Debug Bridge）连接Android X86 环境，以取代通过AVD进行应用调试。</p>
+
+<h2>2. 系统环境</h2>
+
+<ul>
+<li>客户端 Ubuntu 14.04 LTS</li>
+<li>虚拟机 VirtualBox 4.3.18</li>
+<li>Android X86  4.3</li>
+<li>Eclipse 4.4 + ADT</li>
+<li>JDK 1.7.0_67</li>
+</ul>
+
+
+<h2>3. 设置步骤</h2>
+
+<h3>Step1. 安装VirtualBox</h3>
+
+<p>1)将VirtualBox  repository 加入源：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian saucy contrib" &gt;&gt; /etc/apt/sources.list'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2)在Terminal中输入以下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+</span><span class='line'>sudo apt-get update && sudo apt-get install virtualbox-4.3-18</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3)另外可下载Extension Package</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://download.virtualbox.org/virtualbox/4.3.18/Oracle_VM_VirtualBox_Extension_Pack-4.3.18-96516.vbox-extpack</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Step2. 安装Android X86</h3>
+
+<p>Android x86 即运行于 x86 PC上的Android操作系统，目前已经支持大部分安卓程序。
+安装文件可到 <a href="http://www.android-x86.org/download">http://www.android-x86.org/download</a> 下载，目前已有4.4版本下载。
+在VirtualBox中安装Android X86不再细述。</p>
+
+<h3>Step3. Eclipse中ADT安装</h3>
+
+<p>在Eclipse菜单中选择 <code>Help &gt; Install New Software</code>,点击<code>Add</code>,输入以下Url：
+<code>https://dl-ssl.google.com/android/eclipse/</code></p>
+
+<blockquote><p>注意：Url必须以Https开头；</p></blockquote>
+
+<p>然后进行plugin安装；</p>
+
+<h3>Step4. 配置ADB</h3>
+
+<p>在Android SDK的Tools文件夹下包含着Android模拟器操作的重要命令ADB，ADB的全称为Android Debug Bridge，借助该工具，我们可以管理设备或手机模拟器的状态 。
+在Android X86虚拟机装过程中，我们将网址设置成NAT方式，因此需要配置虚拟机参数，进行数据转发，执行以下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>VBoxManage modifyvm &lt;Your_VM_Name&gt; --natpf1 adb,tcp,*,5555,*,5555</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以上命令也可以在VirtualBox虚拟机设置中进行配置，选择 <code>网络-&gt;高级-&gt;端口转发</code> 在弹出窗口中增加转发配置即可。</p>
+
+<h3>Step5. 连接调试</h3>
+
+<p>1)启动Ancroid X86 虚拟机，输入命令查看本地5555端口是否侦听</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ netstat -a </span></code></pre></td></tr></table></div></figure>
+
+
+<p>2) adb连接 Android X86</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#连接Android X86
+</span><span class='line'>$ adb connect localhost:5555
+</span><span class='line'>
+</span><span class='line'>#log输出
+</span><span class='line'>$ adb logcat 
+</span><span class='line'>
+</span><span class='line'># 取消连接
+</span><span class='line'>$ adb disconnect
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3) 在eclipse中运行应用，<code>Run as-&gt;Android Application</code> ,选择 <code>Choose a running Android Device</code>，确定后Eclipse将进行deploy，然后在Android X86中运行应用。</p>
+
+<h2>4. 总结</h2>
+
+<p>通过Android X86的确较大地提高了应用开发调试的效率，不过Android X86的版本跟进相对滞后于Android系统的推出，一些教新的版本还无法安装调试。</p>
+
+<h2>5. 参考文档</h2>
+
+<p>[1]. <a href="http://www.n00bsonubuntu.net/content/install-virtualbox-ubuntu-14-04/">How To Install VirtualBox 4.3. On Ubuntu 14.04</a><br/>
+[2]. <a href="http://www.android-x86.org/documents/virtualboxhowto">Android-x86 - Porting Android to x86 - Debug Howto</a></p>
+
+  
+  
+  <footer class="meta">
+    
+
+
+
+	<div class="tags"><a class='category' href='/blog/categories/android/'>android</a><a class='category' href='/blog/categories/android-x86/'>android-x86</a></div>
+
+    
+  </footer>
+  
+</div>
+</article>
 
 
 	<article class="post"><header>
